@@ -6,3 +6,4 @@ numpy
 openpyxl
 pydantic
 python-dotenv
+slowapi
