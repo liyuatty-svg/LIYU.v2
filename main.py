@@ -440,6 +440,10 @@ async def ask(request: Request, q: AskRequest):
     question = (q.question or "").strip()
     email = (q.email or "").strip()
 
+    print(f"收到問題: {question}")
+    print(f"收到 email: {email}")
+    print(f"newsletter_opt_in: {q.newsletter_opt_in}, contact_opt_in: {q.contact_opt_in}")
+
     if not question:
         raise HTTPException(status_code=422, detail="question 不可為空")
 
