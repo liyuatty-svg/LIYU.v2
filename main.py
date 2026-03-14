@@ -186,7 +186,7 @@ def build_case_text(row: Dict[str, Any], idx: int) -> Dict[str, Any]:
 
 def load_cases_from_excel() -> List[Dict[str, Any]]:
     if not os.path.exists(EXCEL_PATH):
-        raise FileNotFoundError(f"找不到 Excel：{EXCEL_PATH}（請確認 cases.xlsx 在 src/api/）")
+        raise FileNotFoundError(f"找不到 Excel：{EXCEL_PATH}（請確認 cases.xlsx 在同一個資料夾）")
 
     df = pd.read_excel(EXCEL_PATH).fillna("")
     if df.empty:
