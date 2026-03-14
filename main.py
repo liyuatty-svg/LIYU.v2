@@ -426,6 +426,7 @@ def health():
 
 
 @app.post("/ask", response_model=AskResponse)
+    print("收到問題",data.question,"email:",data.email)
 @limiter.limit("10/minute")  # 每個 IP 每分鐘最多 10 次，可依需求調整
 async def ask(request: Request, q: AskRequest):
     request_id = str(uuid.uuid4())
